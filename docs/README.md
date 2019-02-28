@@ -522,6 +522,18 @@ RSSHub 提供下列 API 接口:
 
 <route name="豆列" author="LogicJake" example="/douban/doulist/37716774" path="douban/doulist/:id" :paramsDesc="['豆列id']"/>
 
+<route name="用户广播" author="alfredcai" example="/douban/people/62759792/status" path="douban/people/:userid/status" :paramsDesc="['整数型用户 id']">
+
+::: tip 提示
+
+-   **目前只支持整数型 id**
+-   字母型的 id，可以通过头像图片链接来找到其整数型 id，图片命名规则`ul[userid]-*.jpg`
+-   例如：用户 id: `MovieL`他的头像图片链接：`https://img1.doubanio.com/icon/ul1128221-98.jpg`他的整数型 id: `1128221`
+
+:::
+
+</route>
+
 ### Disqus
 
 <route name="评论" author="DIYgod" example="/disqus/posts/diygod-me" path="/disqus/posts/:forum" :paramsDesc="['网站的 disqus name']"/>
@@ -621,6 +633,10 @@ RSSHub 提供下列 API 接口:
 ### 虎扑
 
 <route name="虎扑BBS步行街" author="LogicJake" example="/hupu/bxj/bxj/2" path="/hupu/bxj/:id/:order?" :paramsDesc="['栏目id，可在栏目 URL 找到', '排序方式，1最新回帖（默认），2最新发帖']"/>
+
+### Dcard
+
+<route name="帖子" author="DIYgod" example="/dcard/posts/popular" path="/dcard/posts/:type?" :paramsDesc="['排序，popular 熱門；latest 最新，默認為 latest']"/>
 
 ## 编程
 
@@ -859,7 +875,7 @@ GitHub 官方也提供了一些 RSS:
 | -------- | -------- | ---- | ---- |
 | 0        | 3        | 1    | 4    |
 
-</router>
+</route>
 
 ## 直播
 
@@ -2729,7 +2745,7 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 
 <route name="Next 主题博客" author="fengkx" example="/hexo/next/fengkx.top" path="/hexo/next/:url" :paramsDesc="['博客 Url 不带协议头']"/>
 
-<route name="Yilia 主题博客" author="aha2mao" example="/hexo/yilia/litten.me" path="/hexo/yilia/:url" :paramsDesc="['博客 Url 不带协议头']"/>
+<route name="Yilia 主题博客" author="aha2mao" example="/hexo/yilia/cloudstone.xin" path="/hexo/yilia/:url" :paramsDesc="['博客 Url 不带协议头']"/>
 
 ### Keep
 
@@ -3015,9 +3031,9 @@ board 和 build 可在[这里](http://api.ineal.me/tss/status)查看
 
 <route name="日报 | D2 资源库" author="Andiedie" example="/d2/daily" path="/d2/daily"/>
 
-### 加摩根大通研究所
+### 摩根大通研究所
 
-<route name="新闻" author="howel.52" example="/jpmorganchase" path="/jpmorganchase"/>
+<route name="新闻" author="howel52" example="/jpmorganchase" path="/jpmorganchase"/>
 
 ### 多知网
 
@@ -3046,6 +3062,21 @@ board 和 build 可在[这里](http://api.ineal.me/tss/status)查看
 | 首页 | 商业    | 创业     | 互娱 | 科技       | 专栏    |
 | ---- | ------- | -------- | ---- | ---------- | ------- |
 | (空) | company | business | ent  | technology | idonews |
+
+</route>
+
+### WeGene
+
+<route name="最近更新" author="LogicJake" example="/wegene/newest" path="/wegene/newest"/>
+<route name="栏目" author="LogicJake" example="/wegene/column/all/all" path="/wegene/column/:type/:category" :paramsDesc="['栏目类型，all（全部项目） 或 weapp（专业版）','栏目分类']">
+
+:::
+type 为 all 时，category 参数不支持 cost 和 free
+:::
+
+| 全部 | 祖源分析 | 付费 | 遗传性疾病 | 药物指南 | 免费 | 运动基因 | 营养代谢   | 心理特质   | 健康风险 | 皮肤特性 | 遗传特征 |
+| ---- | -------- | ---- | ---------- | -------- | ---- | -------- | ---------- | ---------- | -------- | -------- | -------- |
+| all  | ancestry | cost | disease    | drug     | free | genefit  | metabolism | psychology | risk     | skin     | traits   |
 
 </route>
 
