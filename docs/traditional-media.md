@@ -114,6 +114,14 @@ Category 列表:
 
 </Route>
 
+## 东方网
+
+### 上海新闻
+
+<Route author="saury" example="/eastday/sh" path="/eastday/sh" />
+
+</Route>
+
 ## 多维新闻网
 
 ### 要闻
@@ -184,6 +192,16 @@ category 对应的关键词有
 
 </Route>
 
+## 连线 Wired
+
+非订阅用户每月有阅读全文次数限制。
+
+### 标签
+
+<Route author="Naiqus" example="/wired/tag/bitcoin" path="/wired/tag/:tag" :paramsDesc="['标签']">
+
+</Route>
+
 ## 南方周末
 
 ### 新闻分类
@@ -231,6 +249,11 @@ category 对应的关键词有
 ### 观点
 
 <Route author="LogicJake"  example="/people/opinion/223228" path="/people/opinion/:id" :paramsDesc="['板块id，可在 URL 中找到']"/>
+
+### 环保频道
+
+<Route author="zsimple"  example="/people/env/74877" path="/people/env/:id" :paramsDesc="['板块id，可在 URL 中找到']"/>
+
 ### 习近平系列重要讲话
 
 <Route author="LogicJake"  example="/people/xjpjh" path="/people/xjpjh/:keyword?/:year?" :paramsDesc="['关键词，默认不填','年份，默认all']"/>
@@ -290,9 +313,9 @@ category 对应的关键词有
 
 版块：
 
-| society  | politics_economy | cool_japan | travel     | sports     | business   | technology | world      | opinion    |
-| -------- | ---------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 國內綜合 | 政治・經濟       | 文化・生活 | 旅遊・活動 | 體育・奧運 | 商業・商品 | IT・科技   | 國際・東亞 | 評論・專欄 |
+| society  | politics_economy | cool_japan | travel     | sports     | business   | technology | world      | opinion    | whatsnew |
+| -------- | ---------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | -------- |
+| 國內綜合 | 政治・經濟       | 文化・生活 | 旅遊・活動 | 體育・奧運 | 商業・商品 | IT・科技   | 國際・東亞 | 評論・專欄 | 最新消息 |
 
 版块 `cool_japan` 和 `travel` 包含子版块：
 
@@ -318,9 +341,9 @@ category 对应的关键词有
 
 版块：
 
-| society  | politics_economy | cool_japan | travel     | sports     | business   | technology | world      | opinion    |
-| -------- | ---------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- |
-| 日本社会 | 政治・经济       | 文娱・生活 | 旅游・活动 | 体育・奥运 | 商务・商品 | IT・科技   | 国际・东亚 | 观点・专栏 |
+| society  | politics_economy | cool_japan | travel     | sports     | business   | technology | world      | opinion    | whatsnew |
+| -------- | ---------------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | ---------- | -------- |
+| 日本社会 | 政治・经济       | 文娱・生活 | 旅游・活动 | 体育・奥运 | 商务・商品 | IT・科技   | 国际・东亚 | 观点・专栏 | 最新     |
 
 版块 `cool_japan` 和 `travel` 包含子版块：
 
