@@ -1,11 +1,9 @@
 FROM node:10.15-slim
 LABEL MAINTAINER https://github.com/DIYgod/RSSHub/
 
-RUN apt-get update && apt-get install -yq libgconf-2-4 apt-transport-https git --no-install-recommends && apt-get clean \
-  && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -yq libgconf-2-4 apt-transport-https
 
 ENV NODE_ENV production
-ENV TZ Asia/Shanghai
 
 WORKDIR /usr/src/app
 

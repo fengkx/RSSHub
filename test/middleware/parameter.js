@@ -127,20 +127,3 @@ describe('allow_empty', () => {
         expect(parsed.items.length).toBe(0);
     });
 });
-
-describe('wrong_path', () => {
-    it(`wrong_path`, async () => {
-        const response = await request.get('/wrong');
-        expect(response.status).toBe(404);
-        expect(response.text).toMatch(/RSSHub 发生了一些意外: <pre>Error: wrong path/);
-    });
-});
-
-describe('fulltext_mode', () => {
-    it(`fulltext`, async () => {
-        const response = await request.get('/test/1?mode=fulltext');
-        expect(response.status).toBe(200);
-        const parsed = await parser.parseString(response.text);
-        expect(parsed.items[0].content).not.toBe(undefined);
-    });
-});

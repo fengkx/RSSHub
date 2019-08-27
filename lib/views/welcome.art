@@ -26,7 +26,7 @@
         details {
             text-align: left;
             max-height: 400px;
-            overflow: auto;
+            overflow: scroll;
         }
 
         details::-webkit-scrollbar {
@@ -91,12 +91,10 @@
         <details>
             <summary>debug</summary>
             {{ each debug }}
-            {{ if $value && $value.value }}
             <div class="debug-item">
                 <span class="debug-key">{{ $value.name }}: </span>
                 <span class="debug-value">{{@ $value.value }}</span>
             </div>
-            {{ /if }}
             {{ /each }}
         </details>
         {{ /if }}

@@ -42,7 +42,7 @@ pageClass: routes
 
 ### indienova 文章
 
-<Route author="GensouSakuya kt286" example="/indienova/article" path="indienova/:type" :paramsDesc="['类型: `article` 文章，`development` 开发']"/>
+<Route author="GensouSakuya" example="/indienova/article" path="indienova/article"/>
 
 ## Maxjia News
 
@@ -141,22 +141,6 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 
 <Route author="whtsky" example="/steamgifts/discussions" path="/steamgifts/discussions/:category?" :paramsDesc="['分类名称，默认为All']"/>
 
-## 篝火营地
-
-### 游戏资讯
-
-<Route author="sintak" example="/gouhuo/news/switch" path="/gouhuo/news/:category" :paramsDesc="['资讯类型']">
-
-| 精选       | 海外     | 原创    | PS4 | Xboxone | PC  | Switch | 掌机     | 手游       | 新闻 | 评测   | 文化    | 视频  | 音频  | 折扣     |
-| ---------- | -------- | ------- | --- | ------- | --- | ------ | -------- | ---------- | ---- | ------ | ------- | ----- | ----- | -------- |
-| choiceness | overseas | orignal | ps4 | xboxone | pc  | switch | handheld | mobilegame | news | review | culture | video | audio | discount |
-
-</Route>
-
-### 游戏攻略
-
-<Route author="sintak" example="/gouhuo/strategy" path="/gouhuo/strategy"/>
-
 ## 怪物猎人
 
 ### 更新
@@ -200,12 +184,6 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 | latest | notice | news | activity | strategy |
 
 </Route>
-
-## 明日方舟
-
-### 游戏公告与新闻
-
-<Route author="Astrian" example="/arknights/news" path="/arknights/news"/>
 
 ## 小黑盒
 
@@ -274,22 +252,6 @@ Example: `https://store.steampowered.com/search/?specials=1&term=atelier` 中的
 | recommend | history | big    | culture | news | retro    |
 
 </Route>
-
-## 掌上英雄联盟
-
-### 推荐
-
-<Route author="alizeegod" example="/lolapp/recommend" path="/lolapp/recommend"/>
-
-## 最终幻想 14
-
-### 最终幻想 14 国服
-
-<Route author="Kiotlin" example="/ff14/ff14_zh/news" path="/ff14/ff14_zh/:type" :paramsDesc="['分类名']"/>
-
-| 新闻 | 公告     | 活动   | 广告      | 所有 |
-| ---- | -------- | ------ | --------- | ---- |
-| news | announce | events | advertise | all  |
 
 ## きららファンタジア｜奇拉拉幻想曲
 
