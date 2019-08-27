@@ -272,6 +272,10 @@ Use environment variables is recommended to avoid conflicts during upgrade.
 
 `LISTEN_INADDR_ANY`: open up for external access, default to `1`
 
+`REQUEST_RETRY`: retries allowed for failed requests, default to `2`
+
+`DEBUG_INFO`: display route information on homepage for debugging purpose, default to `true`
+
 `TITLE_LENGTH_LIMIT`: limit the length of feed title generated in bytes, an English alphabet counts as 1 byte, the rest such as Chinese, Japanese, Korean or Arabic counts as 2 bytes by design, default to `100`
 
 `REDIS_URL`: Redis target address（invalid when `CACHE_TYPE` is set to memory）, default to `redis://localhost:6379/`
@@ -294,6 +298,10 @@ Use environment variables is recommended to avoid conflicts during upgrade.
 
 `PROXY_URL_REGEX`: regex for url of enabling proxy, default to `.*`
 
+`NODE_NAME`: node name, used for load balancing, identify current node
+
+`PUPPETEER_WS_ENDPOINT`: 用于 puppeteer.connect 的浏览器 websocket 链接，见 [browserWSEndpoint](https://zhaoqize.github.io/puppeteer-api-zh_CN/#?product=Puppeteer&version=v1.14.0&show=api-browserwsendpoint)
+
 ### User Authentication
 
 Routes in `protected_route.js` will be protected using HTTP Basic Authentication.
@@ -302,7 +310,7 @@ When adding feeds using RSS readers with HTTP Basic Authentication support, auth
 
 ### Route-specific Configurations
 
--   `pixiv`: [registration](https://accounts.pixiv.net/signup)
+-   `pixiv`: [Registration](https://accounts.pixiv.net/signup)
 
     -   `PIXIV_USERNAME`: Pixiv username
 
@@ -312,11 +320,13 @@ When adding feeds using RSS readers with HTTP Basic Authentication support, auth
 
     -   `DISQUS_API_KEY`: Disqus API
 
--   `twitter`: [application creation](https://apps.twitter.com)
+-   `twitter`: [Application creation](https://apps.twitter.com)
 
     -   `TWITTER_CONSUMER_KEY`: Twitter Consumer Key, support multiple keys, split them with `,`
 
     -   `TWITTER_CONSUMER_SECRET`: Twitter Consumer Secret, support multiple keys, split them with `,`
+
+    -   `TWITTER_TOKEN_{id}`: Twitter token corresponding id, replace `{id}` with id, the value is splitting consumer_key consumer_secret access_token access_token_secret with `,`, `{consumer_key},{consumer_secret},{access_token},{access_token_secret}`
 
 -   `youtube`: [API Key application](https://console.developers.google.com/)
 
@@ -329,6 +339,10 @@ When adding feeds using RSS readers with HTTP Basic Authentication support, auth
 -   `github`: [Access Token application](https://github.com/settings/tokens)
 
     -   `GITHUB_ACCESS_TOKEN`: GitHub Access Token
+
+-   `mail`:
+
+    -   `EMAIL_CONFIG_{email}`: Mail setting, replace `{email}` with email account, replace `@` in email account with `.`, like `EMAIL_CONFIG_xxx.qq.com`. the value format is `password=password&host=server&port=port`, like `password=123456&host=imap.qq.com&port=993`
 
 ### Access Control
 

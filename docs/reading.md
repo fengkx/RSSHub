@@ -10,6 +10,12 @@ pageClass: routes
 
 <Route author="HenryQW" example="/allpoetry/newest" path="/allpoetry/:order?" :paramsDesc="['排序方式, `best` 或 `newest`, 缺省 `best`']"/>
 
+## Nautilus
+
+### 话题
+
+<Route author="emdoe" example="/nautilus/topic/Art" path="/nautilus/topic/:tid" :paramsDesc="['话题 id, 可在页面上方 TOPICS 栏目处找到']"/>
+
 ## UU 看书
 
 ### 小说更新
@@ -36,7 +42,7 @@ pageClass: routes
 
 ### 小说更新
 
-<Route author="jjeejj" example="/novel/biquge/52_52542" path="/novel/biquge/:id" :paramsDesc="['小说 id, 可在对应小说页 URL 中找到']">
+<Route author="jjeejj" example="/novel/biquge/52_52542" path="/novel/biquge/:id" :paramsDesc="['小说 id, 可在对应小说页 URL 中找到']" anticrawler="1">
 
 ::: tip 提示
 
@@ -102,6 +108,16 @@ pageClass: routes
 
 <Route author="zsakvo" example="/wenku8/chapter/74" path="/wenku8/chapter/:id" :paramsDesc="['小说 id, 可在对应小说页 URL 中找到']"/>
 
+## 书趣阁
+
+### 小说更新
+
+<Route author="ActonGen" example="/novel/shuquge/8659" path="/novel/shuquge/:id" :paramsDesc="['小说 id, 可在对应小说页 URL 中找到, 例如 `8659`']">
+
+举例网址：http://www.shuquge.com/txt/8659/index.html
+
+</Route>
+
 ## 文学迷
 
 ### 小说更新
@@ -117,3 +133,9 @@ pageClass: routes
 ### 章节
 
 <Route author="georeth" example="/zongheng/chapter/672340" path="/zongheng/chapter/:id" :paramsDesc="['小说 id, 可在对应小说页 URL 中找到']"/>
+
+## 左岸读书
+
+### 主页
+
+<Route author="kt286" example="/zreading" path="/zreading" />
