@@ -1,7 +1,13 @@
 {
     "version": 2,
     "routes": [
-        { "src": "/api/.*", "dest": "/api/now.js" },
-        { "src": "/.*", "dest": "/api/now.js" }
-    ]
+        { "src": "/api/.*", "dest": "/lib/now.js" },
+        { "src": "/.*", "dest": "/lib/now.js" }
+    ],
+    "functions": {
+        "lib/now.js": {
+            "runtime": "@now/node@1.5.1",
+            "memory": 1024
+        }
+    }
 }
