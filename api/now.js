@@ -1,4 +1,5 @@
 const path = require('path');
+const clearModule = require('clear-module');
 const moduleAlias = require('module-alias');
 moduleAlias.addAlias('@', path.join(__dirname, '../lib'));
 
@@ -7,8 +8,8 @@ config.set({
     NO_LOGFILES: true,
 });
 
-const app = require('../lib/app');
-
 module.exports = (req, res) => {
+    clearModule('../lib/app');
+    const app = require('../lib/app');
     app.callback()(req, res);
 };

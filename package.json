@@ -74,6 +74,7 @@
     "cheerio": "1.0.0-rc.3",
     "chrono-node": "2.2.6",
     "city-timezones": "^1.2.0",
+    "clear-module": "^4.1.1",
     "crypto-js": "4.0.0",
     "currency-symbol-map": "4.0.4",
     "dayjs": "1.10.3",
