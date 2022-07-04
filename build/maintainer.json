@@ -394,6 +394,9 @@
     "/chinacef/portal/hot": [
         "kdanfly"
     ],
+    "/chinadegrees/:province?": [
+        "TonyRL"
+    ],
     "/chinafactcheck/": [
         "kdanfly"
     ],
@@ -988,6 +991,9 @@
     "/gov/moe/:type": [
         "Crawler995"
     ],
+    "/gov/nmpa/:path+": [
+        "TonyRL"
+    ],
     "/gov/nrta/news/:category?": [
         "yuxinliu-alex"
     ],
@@ -1108,6 +1114,9 @@
         "nczitzk"
     ],
     "/hdu/cs": [
+        "legr4ndk"
+    ],
+    "/hdu/cs/pg": [
         "legr4ndk"
     ],
     "/hellobtc/information/:channel?": [
@@ -2015,6 +2024,15 @@
     ],
     "/pku/scc/recruit/:type?": [
         "DylanXie123"
+    ],
+    "/pku/ss/notice": [
+        "legr4ndk"
+    ],
+    "/pku/ss/admission": [
+        "legr4ndk"
+    ],
+    "/pku/ss/pgadmin": [
+        "legr4ndk"
     ],
     "/playno1/av/:catid?": [
         "TonyRL"
