@@ -1366,6 +1366,36 @@
       }
     ]
   },
+  "baai.ac.cn": {
+    "_name": "北京智源人工智能研究院",
+    "hub": [
+      {
+        "title": "智源社区",
+        "docs": "https://docs.rsshub.app/programming.html#bei-jing-zhi-yuan-ren-gong-zhi-neng-yan-jiu-yuan",
+        "source": [
+          "/"
+        ]
+      },
+      {
+        "title": "活动 - 智源社区",
+        "docs": "https://docs.rsshub.app/programming.html#bei-jing-zhi-yuan-ren-gong-zhi-neng-yan-jiu-yuan",
+        "source": [
+          "/events",
+          "/"
+        ],
+        "target": "/baai/hub/events"
+      },
+      {
+        "title": "评论 - 智源社区",
+        "docs": "https://docs.rsshub.app/programming.html#bei-jing-zhi-yuan-ren-gong-zhi-neng-yan-jiu-yuan",
+        "source": [
+          "/comments",
+          "/"
+        ],
+        "target": "/baai/hub/comments"
+      }
+    ]
+  },
   "baidu.com": {
     "_name": "百度",
     "gushitong": [
@@ -2270,6 +2300,20 @@
       }
     ]
   },
+  "bytes.dev": {
+    "_name": "ui.dev",
+    ".": [
+      {
+        "title": "React Newsletter",
+        "docs": "https://docs.rsshub.app/en/programming.html#ui-dev-bytes",
+        "source": [
+          "/issues",
+          "/"
+        ],
+        "target": "/reactnewsletter"
+      }
+    ]
+  },
   "c114.com.cn": {
     "_name": "C114通信网",
     ".": [
@@ -2808,6 +2852,19 @@
       }
     ]
   },
+  "chsi.com.cn": {
+    "_name": "中国研究生招生信息网",
+    "yz": [
+      {
+        "title": "考研动态",
+        "docs": "https://docs.rsshub.app/study.html#zhong-guo-yan-jiu-sheng-zhao-sheng-xin-xi-wang",
+        "source": [
+          "/kyzx/kydt"
+        ],
+        "target": "/chsi/kydt"
+      }
+    ]
+  },
   "ciidbnu.org": {
     "_name": "中国收入分配研究院",
     ".": [
@@ -2995,6 +3052,51 @@
       }
     ]
   },
+  "cnblogs.com": {
+    "_name": "博客园",
+    "www": [
+      {
+        "title": "10天推荐排行榜",
+        "docs": "https://docs.rsshub.app/blog.html#博客园",
+        "source": [
+          "/aggsite/topdiggs"
+        ],
+        "target": "/cnblogs/aggsite/topdiggs"
+      },
+      {
+        "title": "48小时阅读排行",
+        "docs": "https://docs.rsshub.app/blog.html#博客园",
+        "source": [
+          "/aggsite/topviews"
+        ],
+        "target": "/cnblogs/aggsite/topviews"
+      },
+      {
+        "title": "编辑推荐",
+        "docs": "https://docs.rsshub.app/blog.html#博客园",
+        "source": [
+          "/aggsite/headline"
+        ],
+        "target": "/cnblogs/aggsite/headline"
+      },
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/blog.html#博客园",
+        "source": [
+          "/cate/:type"
+        ],
+        "target": "/cnblogs/cate/:type"
+      },
+      {
+        "title": "精华区",
+        "docs": "https://docs.rsshub.app/blog.html#博客园",
+        "source": [
+          "/pick"
+        ],
+        "target": "/cnblogs/pick"
+      }
+    ]
+  },
   "cncf.io": {
     "_name": "CNCF",
     ".": [
@@ -3120,6 +3222,16 @@
   },
   "codeforces.com": {
     "_name": "Codeforces",
+    ".": [
+      {
+        "title": "Recent Actions",
+        "docs": "https://docs.rsshub.app/programming.html#codeforces-recent-actions",
+        "source": [
+          "/recent-actions"
+        ],
+        "target": "/codeforces/recent-actions"
+      }
+    ],
     "www": [
       {
         "title": "最新比赛",
@@ -3713,6 +3825,71 @@
           "/"
         ],
         "target": "/distill"
+      }
+    ]
+  },
+  "dmzj.com": {
+    "_name": "动漫之家",
+    "news": [
+      {
+        "title": "宅新闻",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/",
+        "target": "/dmzj/news"
+      },
+      {
+        "title": "漫画情报",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/manhuaqingbao",
+        "target": "/dmzj/news/manhuaqingbao"
+      },
+      {
+        "title": "轻小说情报",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/qingxiaoshuoqingbao",
+        "target": "/dmzj/news/qingxiaoshuoqingbao"
+      },
+      {
+        "title": "动漫周边",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/manhuazhoubian",
+        "target": "/dmzj/news/manhuazhoubian"
+      },
+      {
+        "title": "声优情报",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/shengyouqingbao",
+        "target": "/dmzj/news/shengyouqingbao"
+      },
+      {
+        "title": "音乐资讯",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/yinyuezixun",
+        "target": "/dmzj/news/yinyuezixun"
+      },
+      {
+        "title": "游戏资讯",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/youxizixun",
+        "target": "/dmzj/news/youxizixun"
+      },
+      {
+        "title": "美图欣赏",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/meituxinshang",
+        "target": "/dmzj/news/meituxinshang"
+      },
+      {
+        "title": "漫展情报",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/manzhanqingbao",
+        "target": "/dmzj/news/manzhanqingbao"
+      },
+      {
+        "title": "大杂烩",
+        "docs": "https://docs.rsshub.app/anime.html#dong-man-zhi-jia",
+        "source": "/dazahui",
+        "target": "/dmzj/news/dazahui"
       }
     ]
   },
@@ -6626,6 +6803,19 @@
       }
     ]
   },
+  "gq.com.tw": {
+    "_name": "GQ Taiwan",
+    ".": [
+      {
+        "title": "GQ Taiwan",
+        "docs": "https://docs.rsshub.app/new-media.html#gq",
+        "source": [
+          "/*path"
+        ],
+        "target": "/gq/tw/:path"
+      }
+    ]
+  },
   "greasyfork.org": {
     "_name": "Greasy Fork",
     ".": [
@@ -6856,6 +7046,18 @@
           "/"
         ],
         "target": "/hackertalk"
+      }
+    ]
+  },
+  "hackmd.io": {
+    "_name": "HackMD",
+    ".": [
+      {
+        "title": "Profile",
+        "docs": "http://docs.rsshub.app/programming.html#hackmd",
+        "source": [
+          "/:profile"
+        ]
       }
     ]
   },
@@ -7472,6 +7674,14 @@
           "/"
         ],
         "target": "/hotukdeals/discussed"
+      },
+      {
+        "title": "hottest",
+        "docs": "https://docs.rsshub.app/shopping.html#hotukdeals",
+        "source": [
+          "/"
+        ],
+        "target": "/hotukdeals/hottest"
       }
     ]
   },
@@ -7757,6 +7967,20 @@
         "title": "Recent",
         "docs": "https://docs.rsshub.app/journal.html#ieee-xplore",
         "source": "/*"
+      }
+    ]
+  },
+  "ieee-security.org": {
+    "_name": "IEEE Computer Society",
+    ".": [
+      {
+        "title": "IEEE Symposium on Security and Privacy",
+        "docs": "https://docs.rsshub.app/journal.html#ieee-computer-society",
+        "source": [
+          "/TC/SP-Index.html",
+          "/"
+        ],
+        "target": "/ieee-security/security-privacy"
       }
     ]
   },
@@ -10476,6 +10700,14 @@
           "/user/:uid"
         ],
         "target": "/luogu/user/feed/:uid"
+      },
+      {
+        "title": "用户博客",
+        "docs": "https://docs.rsshub.app/programming.html#luo-gu",
+        "source": [
+          "/blog/:name"
+        ],
+        "target": "/luogu/user/blog/:name"
       }
     ]
   },
@@ -10606,6 +10838,20 @@
           "/"
         ],
         "target": "/macfilos/blog"
+      }
+    ]
+  },
+  "mangadex.org": {
+    "_name": "MangaDex",
+    ".": [
+      {
+        "title": "漫画更新",
+        "docs": "https://docs.rsshub.app/anime.html#mangadex",
+        "source": [
+          "/title/:id/*",
+          "/title/:id"
+        ],
+        "target": "/mangadex/:id"
       }
     ]
   },
@@ -11698,6 +11944,19 @@
         "docs": "https://docs.rsshub.app/university.html#hua-bei-shui-li-shui-dian-da-xue",
         "source": "/xxtz.htm",
         "target": "/ncwu/notice"
+      }
+    ]
+  },
+  "ndss-symposium.org": {
+    "_name": "Network and Distributed System Security (NDSS) Symposium",
+    ".": [
+      {
+        "title": "Accepted papers",
+        "docs": "https://docs.rsshub.app/journal.html#network-and-distributed-system-security-ndss-symposium",
+        "source": [
+          "/"
+        ],
+        "target": "/ndss-symposium/ndss"
       }
     ]
   },
@@ -13758,6 +14017,19 @@
       }
     ]
   },
+  "qlu.edu.cn": {
+    "_name": "齐鲁工业大学",
+    ".": [
+      {
+        "title": "通知公告",
+        "docs": "https://docs.rsshub.app/university.html#qi-lu-gong-ye-da-xue",
+        "source": [
+          "/tzggsh/list1.htm"
+        ],
+        "target": "/qlu/notice"
+      }
+    ]
+  },
   "qm120.com": {
     "_name": "全民健康网",
     ".": [
@@ -14650,6 +14922,17 @@
       }
     ]
   },
+  "shoppingdesign.com.tw": {
+    "_name": "Shopping Design",
+    "www": [
+      {
+        "title": "文章列表",
+        "docs": "https://docs.rsshub.app/design.html#shopping-design",
+        "source": "/post",
+        "target": "/shoppingdesign/posts"
+      }
+    ]
+  },
   "shuiguopai.com": {
     "_name": "水果派",
     ".": [
@@ -14691,6 +14974,20 @@
           "/"
         ],
         "target": "/sicau/yan/:category?"
+      }
+    ]
+  },
+  "sigsac.org": {
+    "_name": "ACM Special Interest Group on Security Audit and Control",
+    ".": [
+      {
+        "title": "ACM Conference on Computer and Communications Security",
+        "docs": "https://docs.rsshub.app/journal.html#acm-special-interest-group-on-security-audit-and-control",
+        "source": [
+          "/ccs.html",
+          "/"
+        ],
+        "target": "/sigsac/ccs"
       }
     ]
   },
@@ -16611,6 +16908,29 @@
       }
     ]
   },
+  "typora.io": {
+    "_name": "Typora",
+    ".": [
+      {
+        "title": "Dev Release Changelog",
+        "docs": "https://docs.rsshub.app/program-update.html#typora",
+        "source": [
+          "/releases/dev"
+        ],
+        "target": "/typora/changelog/dev"
+      }
+    ],
+    "support": [
+      {
+        "title": "Changelog",
+        "docs": "https://docs.rsshub.app/program-update.html#typora",
+        "source": [
+          "/"
+        ],
+        "target": "/typora/changelog"
+      }
+    ]
+  },
   "u3c3.com": {
     "_name": "u3c3",
     ".": [
@@ -16789,6 +17109,21 @@
           "/:id"
         ],
         "target": "/uraaka-joshi/:id"
+      }
+    ]
+  },
+  "usenix.org": {
+    "_name": "USENIX",
+    ".": [
+      {
+        "title": "Security Symposia",
+        "docs": "https://docs.rsshub.app/journal.html#usenix",
+        "source": [
+          "/conferences/all",
+          "/conferences",
+          "/"
+        ],
+        "target": "/usenix/usenix-security-sympoium"
       }
     ]
   },
@@ -17844,6 +18179,20 @@
       }
     ]
   },
+  "xys.org": {
+    "_name": "新语丝",
+    ".": [
+      {
+        "title": "新到资料",
+        "docs": "https://docs.rsshub.app/blog.html#xin-yu-si",
+        "source": [
+          "/",
+          "/new.html"
+        ],
+        "target": "/xys/new"
+      }
+    ]
+  },
   "xyzrank.com": {
     "_name": "中文播客榜",
     ".": [
@@ -18212,6 +18561,20 @@
         "docs": "https://docs.rsshub.app/game.html#you-xi-da-zhe-qing-bao-you-xi-zhe-kou",
         "source": "/",
         "target": "/yxdzqb/:type"
+      }
+    ]
+  },
+  "yxrb.net": {
+    "_name": "游戏日报",
+    "news": [
+      {
+        "title": "分类",
+        "docs": "https://docs.rsshub.app/game.html#you-xi-ri-bao",
+        "source": [
+          "/:category",
+          "/"
+        ],
+        "target": "/yxrb/:category"
       }
     ]
   },
