@@ -4,6 +4,24 @@ pageClass: routes
 
 # Social Media
 
+## Crossbell
+
+### Notes
+
+<RouteEn author="DIYgod" example="/crossbell/notes" path="/crossbell/notes" radar="1" rssbud="1"/>
+
+### Notes of character
+
+<RouteEn author="DIYgod" example="/crossbell/notes/character/10" path="/crossbell/notes/character/:characterId" radar="1" rssbud="1"/>
+
+### Notes of source
+
+<RouteEn author="DIYgod" example="/crossbell/notes/source/xlog" path="/crossbell/notes/source/:source" radar="1" rssbud="1"/>
+
+### Feeds of following
+
+<RouteEn author="DIYgod" example="/crossbell/feeds/following/10" path="/crossbell/feeds/following/:characterId" radar="1" rssbud="1"/>
+
 ## CuriousCat
 
 ### User
@@ -120,6 +138,12 @@ Type
 
 <RouteEn author="zphw" example="/gab/popular/hot" path="/gab/popular/:sort?" :paramsDesc="['Sort by, `hot` to be Hot Posts and `top` to be Top Posts. Default: hot']" />
 
+## GETTR
+
+### User timeline
+
+<RouteEn author="TonyRL" example="/gettr/user/jasonmillerindc" path="/gettr/user/:id" :paramsDesc="['User id']" radar="1" rssbud="1"/>
+
 ## Instagram
 
 ::: warning
@@ -179,6 +203,12 @@ These feed do not include boosts (a.k.a. reblogs). RSSHub provides a feed for us
 
 <RouteEn author="notofoe" example="/mastodon/account_id/mastodon.social/23634/statuses/only_media" path="/mastodon/account/:site/:account_id/statuses/:only_media?" :paramsDesc="['instance address, only domain, no `http://` or `https://` protocol header', 'account id. login your instance, then search for the user profile; the account id is in the url', 'whether only display media content, default to false, any value to true']"/>
 
+## Misskey
+
+### Featured Notes
+
+<RouteEn author="Misaka13514" example="/misskey/notes/featured/misskey.io" path="/misskey/notes/featured/:site" :paramsDesc="['instance address, domain only, without `http://` or `https://` protocol header']" radar="1" rssbud="1"/>
+
 ## piapro
 
 ### User latest works
@@ -228,13 +258,13 @@ Though, every Story expires after 24 hours, so it may be not so serious.
 
 <RouteEn author="EYHN" path="/pixiv/ranking/:mode/:date?" example="/pixiv/ranking/week" :paramsDesc="['rank type', 'format: `2018-4-25`']" radar="1" rssbud="1">
 
-| pixiv daily rank | pixiv weekly rank | pixiv monthly rank | pixiv male rank | pixiv female rank | AI-generated work Rankings | pixiv original rank | pixiv rookie user rank |
-| ---------------- | ----------------- | ------------------ | --------------- | ----------------- | ------------------- | ---------------------- | ---------------------- |
-| day              | week              | month              | day_male        | day_female       | day_ai | week_original       | week_rookie            |
+| daily rank | weekly rank | monthly rank | male rank | female rank | AI-generated work Rankings | original rank | rookie user rank |
+| ---------- | ----------- | ------------ | --------- | ----------- | -------------------------- | ------------- | ---------------- |
+| day        | week        | month        | day_male  | day_female  | day_ai                     | week_original | week_rookie      |
 
-| pixiv R-18 daily rank | pixiv R-18 male rank | pixiv R-18 female rank | pixiv R-18 weekly rank | pixiv R-18G rank |
-| --------------------- | -------------------- | ---------------------- | ---------------------- | ---------------- |
-| day_r18               | day_male_r18         | day_female_r18         | week_r18               | week_r18g        |
+| R-18 daily rank | R-18 AI-generated work | R-18 male rank | R-18 female rank | R-18 weekly rank | R-18G rank |
+| --------------- | ---------------------- | -------------- | ---------------- | ---------------- | ---------- |
+| day_r18         | day_r18_ai             | day_male_r18   | day_female_r18   | week_r18         | week_r18g  |
 
 </RouteEn>
 

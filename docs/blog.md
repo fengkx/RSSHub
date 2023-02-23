@@ -49,6 +49,7 @@ username 为博主用户名，而非`xxx.hashnode.dev`中`xxx`所代表的 blog 
 :::
 
 </Route>
+
 ## Hedwig.pub
 
 ### 博客
@@ -244,6 +245,12 @@ username 为博主用户名，而非`xxx.hashnode.dev`中`xxx`所代表的 blog 
 
 </Route>
 
+## 虎皮椒
+
+### 文章
+
+<Route author="wxluckly" example="/xunhupay/blog" path="/xunhupay/blog" radar="1"/>
+
 ## 華康字型故事
 
 ### 博客
@@ -309,6 +316,12 @@ username 为博主用户名，而非`xxx.hashnode.dev`中`xxx`所代表的 blog 
 | drama_deep | drama_rating | drama_column | drama_interactive |
 
 </Route>
+
+## 交流岛资源网
+
+### 最新文章
+
+<Route author="TonyRL" example="/jiaoliudao" path="/jiaoliudao" radar="1" />
 
 ## 敬维博客
 

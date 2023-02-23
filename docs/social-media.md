@@ -344,6 +344,24 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 </Route>
 
+## Crossbell
+
+### Notes
+
+<Route author="DIYgod" example="/crossbell/notes" path="/crossbell/notes" radar="1" rssbud="1"/>
+
+### Notes of character
+
+<Route author="DIYgod" example="/crossbell/notes/character/10" path="/crossbell/notes/character/:characterId" radar="1" rssbud="1"/>
+
+### Notes of source
+
+<Route author="DIYgod" example="/crossbell/notes/source/xlog" path="/crossbell/notes/source/:source" radar="1" rssbud="1"/>
+
+### Feeds of following
+
+<Route author="DIYgod" example="/crossbell/feeds/following/10" path="/crossbell/feeds/following/:characterId" radar="1" rssbud="1"/>
+
 ## Curius
 
 ### 用户
@@ -454,6 +472,12 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 <Route author="zphw" example="/gab/popular/hot" path="/gab/popular/:sort?" :paramsDesc="['排序方式, `hot` 為 Hot Posts, `top` 為 Top Posts。默認為 hot']" />
 
+## GETTR
+
+### 个人时间线
+
+<Route author="TonyRL" example="/gettr/user/jasonmillerindc" path="/gettr/user/:id" :paramsDesc="['用户 id']" radar="1" rssbud="1"/>
+
 ## iCity
 
 ### 用户动态
@@ -527,6 +551,12 @@ Tiny Tiny RSS 会给所有 iframe 元素添加 `sandbox="allow-scripts"` 属性�
 
 <Route author="notofoe" example="/mastodon/account_id/mastodon.social/23634/statuses/only_media" path="/mastodon/account/:site/:account_id/statuses/:only_media?" :paramsDesc="['实例地址, 仅域名, 不包括`http://`或`https://`协议头', '用户 ID. 登录实例后, 搜索用户并进入用户页, 在地址中可以找到这串数字', '是否只显示包含媒体（图片或视频）的推文, 默认置空为否, 任意值为是']"/>
 
+## Misskey
+
+### 精选笔记
+
+<Route author="Misaka13514" example="/misskey/notes/featured/misskey.io" path="/misskey/notes/featured/:site" :paramsDesc="['实例地址, 仅域名, 不包括`http://`或`https://`协议头']" radar="1" rssbud="1"/>
+
 ## piapro
 
 ### 用户最新作品
@@ -576,13 +606,13 @@ Instagram Stories 没有可靠的 guid，你的 RSS 阅读器可能将同一条 
 
 <Route author="EYHN" example="/pixiv/ranking/week" path="/pixiv/ranking/:mode/:date?" :paramsDesc="['排行榜类型' ,'日期, 取值形如 `2018-4-25`']" radar="1" rssbud="1">
 
-| pixiv 日排行 | pixiv 周排行 | pixiv 月排行 | pixiv 受男性欢迎排行 | pixiv 受女性欢迎排行 | AI 生成作品排行榜 | pixiv 原创作品排行  | pixiv 新人排行  |
-| --------- | --------- | --------- | ------------- | ------------- | ---------- | ------------- | ----------- |
-| day       | week      | month     | day_male      | day_female    | day_ai     | week_original | week_rookie |
+| 日排行 | 周排行  | 月排行   | 受男性欢迎排行  | 受女性欢迎排行    | AI 生成作品排行榜 | 原创作品排行        | 新人排行        |
+| --- | ---- | ----- | -------- | ---------- | ---------- | ------------- | ----------- |
+| day | week | month | day_male | day_female | day_ai     | week_original | week_rookie |
 
-| pixiv R-18 日排行 | pixiv R-18 受男性欢迎排行 | pixiv R-18 受女性欢迎排行 | pixiv R-18 周排行 | pixiv R-18G 排行 |
-| -------------- | ------------------ | ------------------ | -------------- | -------------- |
-| day_r18        | day_male_r18       | day_female_r18     | week_r18       | week_r18g      |
+| pixiv R-18 日排行 | R-18 AI 生成作品排行 | R-18 受男性欢迎排行 | R-18 受女性欢迎排行   | R-18 周排行 | R-18G 排行  |
+| -------------- | -------------- | ------------ | -------------- | -------- | --------- |
+| day_r18        | day_r18_ai     | day_male_r18 | day_female_r18 | week_r18 | week_r18g |
 
 </Route>
 
@@ -1183,11 +1213,11 @@ YouTube 官方亦有提供频道 RSS，形如 <https://www.youtube.com/feeds/vid
 
 ### 出版專題
 
-<Route author="Maecenas" example="/vocus/publication/bass" path="/vocus/publication/:id" :paramsDesc="['出版專題 id，可在出版專題主页的 URL 找到']"/>
+<Route author="Maecenas" example="/vocus/publication/bass" path="/vocus/publication/:id" :paramsDesc="['出版專題 id，可在出版專題主页的 URL 找到']" radar="1"/>
 
 ### 用户个人文章
 
-<Route author="LogicJake" example="/vocus/user/tsetyan" path="/vocus/user/:id" :paramsDesc="['用户 id，可在用户主页的 URL 找到']"/>
+<Route author="LogicJake" example="/vocus/user/tsetyan" path="/vocus/user/:id" :paramsDesc="['用户 id，可在用户主页的 URL 找到']" radar="1"/>
 
 ## 即刻
 
@@ -1197,7 +1227,7 @@ YouTube 官方亦有提供频道 RSS，形如 <https://www.youtube.com/feeds/vid
 
 ### 圈子
 
-<Route author="DIYgod prnake" example="/jike/topic/556688fae4b00c57d9dd46ee" path="/jike/topic/:id" :paramsDesc="['圈子 id, 可在即刻 web 端圈子页或 APP 分享出来的圈子页 URL 中找到']" radar="1" rssbud="1"/>
+<Route author="DIYgod prnake" example="/jike/topic/556688fae4b00c57d9dd46ee" path="/jike/topic/:id/:showUid?" :paramsDesc="['圈子 id, 可在即刻 web 端圈子页或 APP 分享出来的圈子页 URL 中找到', '是否在内容中显示用户信息，设置为 1 则开启']" radar="1" rssbud="1"/>
 
 ### 圈子 - 纯文字
 

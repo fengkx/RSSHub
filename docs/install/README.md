@@ -20,6 +20,7 @@ sidebar: auto
 3.  [Redis](https://redis.io/download)
 4.  [Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
 5.  [Google App Engine](https://cloud.google.com/appengine/)
+6.  [Fly.io](https://fly.io/)
 
 ## Docker 镜像
 
@@ -231,7 +232,7 @@ $ pm2 start lib/index.js --name rsshub
 Debian:
 
 ```bash
-$ apt install chroium
+$ apt install chromium
 $ echo >> .env
 $ echo 'CHROMIUM_EXECUTABLE_PATH=chromium' >> .env
 ```
@@ -303,14 +304,47 @@ Heroku [不再](https://blog.heroku.com/next-chapter) 提供免费服务。
 
 ### 自动更新部署
 
-1.  将 RSSHub [分叉（fork）](https://github.com/login?return_to=%2FDIYgod%2FRSSHub) 到自己的账户下。
+1.  将 RSSHub [分叉（fork）](https://github.com/DIYgod/RSSHub/fork) 到自己的账户下。
 2.  把自己的分叉部署到 Heroku：`https://heroku.com/deploy?template=URL`，其中 `URL` 改为分叉地址 （例如 `https://github.com/USERNAME/RSSHub`)。
 3.  检查 Heroku 设置，随代码库更新自动部署。
 4.  安装 [Pull](https://github.com/apps/pull) 应用，定期将 RSSHub 改动自动同步至你的分叉。
 
-## 部署到 Vercel (Zeit Now)
+## 部署到 Vercel (ZEIT Now)
 
 [![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/DIYgod/RSSHub)
+
+## 部署到 Fly.io
+
+1.  将 RSSHub [分叉（fork）](https://github.com/DIYgod/RSSHub/fork) 到自己的账户下。
+2.  下载分叉的源码
+    ```bash
+    $ git clone https://github.com/<your username>/RSSHub.git
+    $ cd RSSHub
+    ```
+3.  前往 [Fly.io 完成注册](https://fly.io/app/sign-up)，并安装 [`flyctl` CLI](https://fly.io/docs/hands-on/install-flyctl/)。
+4.  运行 `flyctl launch`, 并选择一个唯一的名称和实例地区。
+5.  使用 `flyctl secrets set KEY=VALUE` [对部分模块进行配置](#pei-zhi-bu-fen-rss-mo-kuai-pei-zhi)。
+6.  [配置通过 GitHub Actions 自动部署](https://fly.io/docs/app-guides/continuous-deployment-with-github-actions/)
+7.  安装 [Pull](https://github.com/apps/pull) 应用，定期将 RSSHub 改动自动同步至你的分叉。
+8.  （可选）将自己的域名指向 fly.io 提供的 IPv4 和 IPv6 地址，并在 Certificate 页面添加自有域名
+
+### 配置内置的 Upstash Redis 缓存
+
+在 `RSSHub` 文件夹下运行
+
+```bash
+$ flyctl redis create
+```
+
+来创建一个新的 Redis 数据库，建议选择开启 [eviction](https://redis.io/docs/reference/eviction/)。创建完成后会输出类似于 `redis://default:<password>@<domain>.upstash.io` 的字符串。
+
+再运行
+
+```bash
+$ flyctl secrets set CACHE_TYPE=redis REDIS_URL='<刚才的连接字符串>'
+```
+
+完成在服务器上的配置。
 
 ## 部署到 PikaPods
 
@@ -571,13 +605,15 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
 
 ::: tip 测试特性
 
-这个板块控制的是一些新特性的选项，默认他们都是关闭的。如果有需要请阅读对应说明后按需开启
+这个板块控制的是一些新特性的选项，他们都是**默认关闭**的。如果有需要请阅读对应说明后按需开启
 
 :::
 
 `ALLOW_USER_HOTLINK_TEMPLATE`: [通用参数 -> 多媒体处理](/parameter.html#duo-mei-ti-chu-li)特性控制
 
 `FILTER_REGEX_ENGINE`: 控制 [通用参数 -> 内容过滤](/parameter.html#nei-rong-guo-lu) 使用的正则引擎。可选`[re2, regexp]`，默认`re2`。我们推荐公开实例不要调整这个选项，这个选项目前主要用于向后兼容。
+
+`ALLOW_USER_SUPPLY_UNSAFE_DOMAIN`: 允许用户为路由提供域名作为参数。建议公共实例不要调整此选项，开启后可能会导致 [服务端请求伪造（SSRF）](https://owasp.org/www-community/attacks/Server_Side_Request_Forgery)
 
 ### 其他应用配置
 
@@ -834,10 +870,6 @@ RSSHub 支持使用访问密钥 / 码，白名单和黑名单三种方式进行�
 -   轻小说文库
 
     -   `WENKU8_COOKIE`: 登陆轻小说文库后的 cookie
-
--   语雀 全部路由：[注册地址](https://www.yuque.com/register)
-
-    -   `YUQUE_TOKEN`: 语雀 Token，[获取地址](https://www.yuque.com/settings/tokens)。语雀接口做了访问频率限制，为保证正常访问建议配置 Token，详见 [语雀开发者文档](https://www.yuque.com/yuque/developer/api#5b3a1535)。
 
 -   邮箱 邮件列表路由：
 
