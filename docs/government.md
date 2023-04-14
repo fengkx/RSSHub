@@ -148,7 +148,23 @@ pageClass: routes
 
 ### 政府公开信息
 
-<Route author="zytomorrow" example="/gov/sichuan/deyang/govpulicinfo/绵竹市" path="/gov/sichuan/deyang/govpulicinfo/:countyName" :paramsDesc="['区县名（**其他区县整改中，暂时只支持`绵竹市`**）。德阳市、绵竹市、广汉市、什邡市、中江县、罗江区、旌阳区、高新区']"/>
+<Route author="zytomorrow" example="/gov/sichuan/deyang/govpublicinfo/绵竹市" path="/gov/sichuan/deyang/govpublicinfo/:countyName/:infoType?" :paramsDesc="['区县名（**其他区县整改中，暂时只支持`绵竹市`**）。德阳市、绵竹市、广汉市、什邡市、中江县、罗江区、旌阳区、高新区', '信息类型。默认值:fdzdnr-“法定主动内容”']">
+
+| 法定主动内容 | 公示公告 |
+| :----------: | :------: |
+|    fdzdnr    |   gsgg   |
+
+</Route>
+
+### 今日绵竹
+
+<Route author="zytomorrow" example="/gov/sichuan/deyang/mztoday/zx" path="/gov/sichuan/deyang/mztoday/:infoType?" :paramsDesc="['信息栏目名称。默认最新(zx)']">
+
+| 最新 | 推荐 | 时政 | 教育 | 民生 | 文旅 | 经济 | 文明创建 | 部门 | 镇（街道） | 健康绵竹 | 南轩讲堂 | 视频 | 文明实践 | 领航中国 | 绵竹年画 | 绵竹历史 | 绵竹旅游 | 外媒看绵竹 |
+| ---- | ---- | ---- | ---- | ---- | ---- | ---- | -------- | ---- | ---------- | -------- | -------- | ---- | -------- | -------- | -------- | -------- | -------- | ---------- |
+| zx   | tj   | sz   | jy   | ms   | wl   | jj   | wmcj     | bm   | zj         | jkmz     | nxjt     | sp   | wmsj     | lhzg     | mznh     | mzls     | mzly     | wmkmz      |
+
+</Route>
 
 ## 广东省人民政府
 
@@ -248,15 +264,17 @@ pageClass: routes
 
 ## 国家统计局
 
-### 统计数据 > 最新发布
+### 通用
 
-<Route author="bigfei" example="/gov/stats/tjsj/zxfb" path="/gov/stats/:path+" :paramsDesc="['路径，默认为 统计数据 > 最新发布']">
+<Route author="bigfei nczitzk" example="/gov/stats/sj/zxfb" path="/gov/stats/:path+" :paramsDesc="['路径，默认为数据最新发布']">
 
 ::: tip 提示
 
 路径处填写对应页面 URL 中 `http://www.stats.gov.cn/` 后的字段。下面是一个例子。
 
-若订阅 [统计数据 > 统计标准](http://www.stats.gov.cn/tjsj/tjbz/) 则将对应页面 URL <http://www.stats.gov.cn/tjsj/tjbz/> 中 `http://www.stats.gov.cn/` 后的字段 `tjsj/tjbz` 作为路径填入。此时路由为 [`/gov/stats/tjsj/tjbz`](https://rsshub.app/gov/stats/tjsj/tjbz)
+若订阅 [数据 > 数据解读](http://www.stats.gov.cn/sj/sjjd/) 则将对应页面 URL <http://www.stats.gov.cn/sj/sjjd/> 中 `http://www.stats.gov.cn/` 后的字段 `sj/sjjd` 作为路径填入。此时路由为 [`/gov/stats/sj/sjjd`](https://rsshub.app/gov/stats/sj/sjjd)
+
+若订阅 [新闻 > 时政要闻 > 中央精神](http://www.stats.gov.cn/xw/szyw/zyjs/) 则将对应页面 URL <http://www.stats.gov.cn/xw/szyw/zyjs/> 中 `http://www.stats.gov.cn/` 后的字段 `xw/szyw/zyjs` 作为路径填入。此时路由为 [`/gov/stats/xw/szyw/zyjs`](https://rsshub.app/gov/stats/xw/szyw/zyjs)
 
 :::
 
@@ -469,6 +487,12 @@ pageClass: routes
 ### 公告
 
 <Route author="Jeason0228" example="/gov/hunan/notice/all" path="/gov/hunan/notice/:type"  :paramsDesc="['all=全部，cg=采购公告,zb=中标公告,fb=废标公告,ht=合同公告,gz=更正公告,zz=终止公告,qt=其他公告']" />
+
+## 济南市卫生健康委员会
+
+### 获取国家医师资格考试通知
+
+<Route author="tzjyxb" example="/gov/jinan/healthcommission/medical_exam_notice" path="/gov/jinan/healthcommission/medical_exam_notice" radar="1"/>
 
 ## 江苏省人民政府
 

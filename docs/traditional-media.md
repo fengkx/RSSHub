@@ -21,7 +21,6 @@ pageClass: routes
 支持 [Topic Library](https://abc.net.au/news/topics) 中的所有 Topic，你可以填入其 URL 中 `topic` 后的字段，也可以填入对应的 `documentId`。
 
 如 [Computers and Technology](https://www.abc.net.au/news/topic/computers-and-technology) 的 URL 是 <https://www.abc.net.au/news/topic/computers-and-technology>，其 `topic` 后的字段为 `computers-and-technology`，且该 Topic 的 `documentId` 为 `2302`，所以路由为 [/abc/computers-and-technology](https://rsshub.app/abc/computers-and-technology) 以及 [/abc/2302](https://rsshub.app/abc/2302)。
-
 支持的 Channel 在下表已经全部列出，同上，其他 Channel 请找到对应 Channel 页面的源代码中的 `documentId` 填入。
 
 :::
@@ -632,13 +631,31 @@ Category 列表：
 
 ## 参考消息
 
-### 新闻分类
+### 栏目
 
-<Route author="yuxinliu-alex" example="/cankaoxiaoxi/news/military_news" path="/cankaoxiaoxi/news/:category">
+<Route author="yuxinliu-alex nczitzk" example="/cankaoxiaoxi/column/diyi" path="/cankaoxiaoxi/column/:id?" :paramsDesc="['栏目 id，默认为 diyi，即第一关注']">
 
-| 中国       | 国际       | 军事          | 台海        | 财经         | 科技            | 文化         |
-| ---------- | ---------- | ------------- | ----------- | ------------ | --------------- | ------------ |
-| china_news | world_news | military_news | taiwan_news | finance_news | technology_news | culture_news |
+| 栏目           | id       |
+| -------------- | -------- |
+| 第一关注       | diyi     |
+| 中国           | zhongguo |
+| 国际           | gj       |
+| 观点           | guandian |
+| 锐参考         | ruick    |
+| 体育健康       | tiyujk   |
+| 科技应用       | kejiyy   |
+| 文化旅游       | wenhualy |
+| 参考漫谈       | cankaomt |
+| 研究动态       | yjdt     |
+| 海外智库       | hwzk     |
+| 业界信息・观点 | yjxx     |
+| 海外看中国城市 | hwkzgcs  |
+| 译名趣谈       | ymymqt   |
+| 译名发布       | ymymfb   |
+| 双语汇         | ymsyh    |
+| 参考视频       | video    |
+| 军事           | junshi   |
+| 参考人物       | cankaorw |
 
 </Route>
 
@@ -1080,6 +1097,71 @@ IT・科学 tech_science
 <Route author="Rongronggg9" example="/kyodonews" path="/kyodonews/:language?/:keyword?" :paramsDesc="['语言: `china` = 简体中文 (默认), `tchina` = 繁體中文', '关键词']">
 
 `keyword` 为关键词，由于共同网有许多关键词并不在主页列出，此处不一一列举，可从关键词页的 URL 的最后一级路径中提取。如 `日中关系` 的关键词页 URL 为 `https://china.kyodonews.net/news/japan-china_relationship`, 则将 `japan-china_relationship` 填入 `keyword`。特别地，当填入 `rss` 时，将从共同网官方 RSS 中抓取文章；略去时，将从首页抓取最新报道 (注意：首页更新可能比官方 RSS 稍慢)。
+
+</Route>
+
+## 广州日报
+
+### 客户端
+
+<Route author="TimWu007" example="/gzdaily/app/74" path="/gzdaily/app/:column?" :paramsDesc="['栏目 ID，点击对应栏目后在地址栏找到']">
+
+::: tip 提示
+
+在北京时间深夜可能无法获取内容。
+
+:::
+
+常用栏目 ID：
+
+| 栏目名 | ID   |
+| ------ | ---- |
+| 首页   | 74   |
+| 时局   | 374  |
+| 广州   | 371  |
+| 大湾区 | 397  |
+| 城区   | 2980 |
+
+</Route>
+
+## 广州市融媒体中心
+
+### 频道
+
+<Route author="TimWu007" example="/gz-cmc/huacheng/shouye" path="/gz-cmc/:site/:channel?" :paramsDesc="['站点代码', '频道代码']">
+
+已知支持的站点及对应的`站点代码`如下：
+
+|                       站点 / 客户端名                      |     营运机构     |                      代码                      |
+| :--------------------------------------------------------: | :--------------: | :--------------------------------------------: |
+|          [新花城](https://www.gz-cmc.com "新花城")         |    广州日报社    |                   `huacheng`                   |
+| [广州白云](https://guangzhoubaiyun.gz-cmc.com/ "广州白云") | 白云区融媒体中心 |                `guangzhoubaiyun`               |
+|                          到黄埔去                          | 黄埔区融媒体中心 |                 `daohuangpuqu`                 |
+|                          掌上番禺                          | 番禺区融媒体中心 | `zhangshangfanyu` <br />（注：此处非笔误 = =） |
+|                           阅增城                           | 增城区融媒体中心 |                 `yuezengcheng`                 |
+
+如有上表未列出的站点，欢迎补充。
+
+`频道代码`获取方式：
+
+1.  在对应频道 url 后的参数中获取，如`首页`的栏目 url 为`https://huacheng.gz-cmc.com/channel/shouye/index.html`, `频道代码`即为`shouye`。
+2.  进入相应站点的客户端后抓包。
+
+黄埔、增城、番禺三区的站点无网页，需采用抓包的方式获取频道代码。现列出部分：
+
+|           频道名           |   代码   |
+| :------------------------: | :------: |
+|         黄埔 - 首页        |   `sy`   |
+| 黄埔 -《湾区时报》最新一期 |  `hpxsd` |
+|         黄埔 - 民生        |   `ms`   |
+|        黄埔 - 企明星       |   `qmx`  |
+|         增城 - 首页        | `shouye` |
+|         增城 - 身边        |   `sb`   |
+|         增城 - 本地        |  `zcfb`  |
+|         番禺 - 首页        | `shouye` |
+|         番禺 - 身边        |   `yw`   |
+|         番禺 - 生活        |   `sh`   |
+|         番禺 - 教育        |   `jy`   |
 
 </Route>
 
@@ -1576,6 +1658,30 @@ category 对应的关键词有
 
 </Route>
 
+## 南方网
+
+### 南方 +（按栏目 ID）
+
+<Route author="TimWu007" example="/southcn/nfapp/column/38" path="/southcn/nfapp/column/:column?" :paramsDesc="['栏目或南方号 ID']">
+
+::: tip 提示
+若此处输入的是栏目 ID（而非南方号 ID），则该接口会返回与输入栏目相关联栏目的文章。例如，输入栏目 ID `38`（广州），则返回的结果还会包含 ID 为 `3547`（市长报道集）的文章。
+:::
+
+1.  `pc.nfapp.southcn.com` 下的文章页面，可通过 url 查看，例：<http://pc.nfapp.southcn.com/13707/7491109.html> 的栏目 ID 为 `13707`。
+2.  `static.nfapp.southcn.com` 下的文章页面，可查看网页源代码，搜索 `columnid`。
+3.  <https://m.nfapp.southcn.com/column/all> 列出了部分栏目，`id` 即为栏目 ID。
+
+</Route>
+
+### 南方 +（按作者）
+
+<Route author="TimWu007" example="/southcn/nfapp/reporter/969927791" path="/southcn/nfapp/reporter/:reporter" :paramsDesc="['作者 UUID']">
+
+作者的 UUID 只可通过 `static.nfapp.southcn.com` 下的文章页面获取。点击文章下方的作者介绍，进入该作者的个人主页，即可从 url 中获取。
+
+</Route>
+
 ## 南方周末
 
 ### 新闻分类
@@ -1986,6 +2092,26 @@ category 对应的关键词有
 
 <Route author="rainrdx" example="/nikkei/asia" path="/nikkei/asia" radar="1"/>
 
+## 三立新聞網
+
+### 新聞
+
+<Route author="nczitzk" example="/setn" path="/setn/:category?" :paramsDesc="['分类，见下表，默认为即時']">
+
+| 即時 | 熱門 | 娛樂 | 政治 | 社會 |
+| ---- | ---- | ---- | ---- | ---- |
+
+| 國際 | 兩岸 | 生活 | 健康 | 旅遊 |
+| ---- | ---- | ---- | ---- | ---- |
+
+| 運動 | 地方 | 財經 | 富房網 | 名家 |
+| ---- | ---- | ---- | ------ | ---- |
+
+| 新奇 | 科技 | 汽車 | 寵物 | 女孩 | HOT 焦點 |
+| ---- | ---- | ---- | ---- | ---- | -------- |
+
+</Route>
+
 ## 厦门网
 
 ### 数字媒体
@@ -2164,28 +2290,6 @@ category 对应的关键词有
 
 </Route>
 
-## 香港 01
-
-### 热门
-
-<Route author="hoilc Fatpandac nczitzk" example="/hk01/hot" path="/hk01/hot" radar="1" rssbud="1"/>
-
-### 栏目
-
-<Route author="hoilc Fatpandac nczitzk" example="/hk01/zone/11" path="/hk01/zone/:id" :paramsDesc="['栏目 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
-
-### 子栏目
-
-<Route author="hoilc Fatpandac nczitzk" example="/hk01/channel/391" path="/hk01/channel/:id" :paramsDesc="['子栏目 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
-
-### 专题
-
-<Route author="hoilc Fatpandac nczitzk" example="/hk01/issue/649" path="/hk01/issue/:id" :paramsDesc="['专题 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
-
-### 标签
-
-<Route author="hoilc Fatpandac nczitzk" example="/hk01/tag/2787" path="/hk01/tag/:id" :paramsDesc="['标签 id, 可在 URL 中找到']" radar="1" rssbud="1"/>
-
 ## 香港電台
 
 ### 新聞
@@ -2293,6 +2397,24 @@ category 对应的关键词有
 ### 电子报
 
 <Route author="MisteryMonster" example="/bjnews/epaper/A" path="/bjnews/epaper/:cat" :paramsDesc="['新京报叠名：`A`,`B`,`C`,`D`, 特刊为`special`']"/>
+
+## 新快报
+
+### 新闻
+
+<Route author="TimWu007" example="/xkb/350" path="/xkb/:channel" :paramsDesc="['栏目 ID，点击对应栏目后在地址栏找到']">
+
+常用栏目 ID：
+
+| 栏目名 | ID  |
+| ------ | --- |
+| 首页   | 350 |
+| 重点   | 359 |
+| 广州   | 353 |
+| 湾区   | 360 |
+| 天下   | 355 |
+
+</Route>
 
 ## 新蓝网（浙江广播电视集团）
 
@@ -2499,6 +2621,12 @@ category 对应的关键词有
 > 如 URL `https://radio.cgtn.com/podcast/column/ezfm/More-to-Read/4` ，其 `category` 为 `ezfm` ，`id` 为 `4`，对应的订阅路由为 [`/podcast/ezfm/4`](https://rsshub.app/podcast/ezfm/4)
 
 </Route>
+
+## 中国科技网
+
+### 科技日报
+
+<Route author="lyqluis" example="/stdaily/digitalpaper" path="/stdaily/digitalpaper" />
 
 ## 中国日报
 

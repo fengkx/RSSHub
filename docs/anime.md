@@ -374,6 +374,16 @@ Sources
 
 </Route>
 
+## nhentai
+
+### 分类筛选
+
+<Route author="MegrezZhu hoilc" example="/nhentai/language/chinese" path="/nhentai/:key/:keyword/:mode?" :paramsDesc="['筛选条件，可选：parody, character, tag, artist, group, language, category','筛选值', '模式，`simple` 为仅封面，`detail` 会包括本子每一页，但对服务器负载大，`torrent` 会包括磁力链接，需要登录，参见 [部分 RSS 模块配置](/install/#pei-zhi-bu-fen-rss-mo-kuai-pei-zhi)。默认为 `simple`']" anticrawler="1" supportBT="1" />
+
+### 高级搜索
+
+<Route author="MegrezZhu hoilc" example='/nhentai/search/language%3Ajapanese+-scat+-yaoi+-guro+-"mosaic+censorship"' path="/nhentai/search/:keyword/:mode?" :paramsDesc="['用于搜索的关键词。可在原网站搜索后复制 `q=` 后面的内容，也可直接输入。用法详见 [官网](https://nhentai.net/info/)', '模式，`simple` 为仅封面，`detail` 会包括本子每一页，但对服务器负载大，`torrent` 会包括磁力链接，需要登录，参见 [部分 RSS 模块配置](/install/#pei-zhi-bu-fen-rss-mo-kuai-pei-zhi)。默认为 `simple`']" anticrawler="1" supportBT="1" />
+
 ## QooApp
 
 ### 遊戲庫 - 評論
@@ -480,7 +490,7 @@ Sources
 
 ### 最新动态
 
-<Route author="Ye11" example="/xmanhua" path="/xmanhua/:uid" :paramsDesc="['漫画 id,在浏览器中可见，例如鬼灭之刃对应的 id 为 `73xm`']"/>
+<Route author="Ye11" example="/xmanhua/73xm" path="/xmanhua/:uid" :paramsDesc="['漫画 id,在浏览器中可见，例如鬼灭之刃对应的 id 为 `73xm`']"/>
 
 ## 俺の 3D エロ動画 (oreno3d)
 
@@ -605,6 +615,12 @@ Sources
 ### 漫画更新
 
 <Route author="KellyHwong" path="/cartoonmad/comic/:id" example="/cartoonmad/comic/5827" :paramsDesc="['漫画ID']" radar="1"/>
+
+## 番组放送
+
+### 开播提醒
+
+<Route author="x2cf" example="/bgmlist/onair/zh-Hans" path="/bgmlist/onair/:lang?" :paramsDesc="['语言']" radar="1" rssbud="1" />
 
 ## 风之动漫
 
