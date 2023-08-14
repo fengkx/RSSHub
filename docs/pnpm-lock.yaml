@@ -15,8 +15,8 @@ dependencies:
     specifier: 1.9.9
     version: 1.9.9
   '@vuepress/shared-utils':
-    specifier: 1.9.9
-    version: 1.9.9
+    specifier: 1.9.10
+    version: 1.9.10
   markdown-it:
     specifier: 13.0.1
     version: 13.0.1
@@ -9510,7 +9510,7 @@ packages:
   /vuepress-plugin-container@2.1.5:
     resolution: {integrity: sha512-TQrDX/v+WHOihj3jpilVnjXu9RcTm6m8tzljNJwYhxnJUW0WWQ0hFLcDTqTBwgKIFdEiSxVOmYE+bJX/sq46MA==}
     dependencies:
-      '@vuepress/shared-utils': 1.9.9
+      '@vuepress/shared-utils': 1.9.10
       markdown-it-container: 2.0.0
     transitivePeerDependencies:
       - supports-color
