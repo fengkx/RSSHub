@@ -1,6 +1,7 @@
-const path = require('path');
-const moduleAlias = require('module-alias');
-moduleAlias.addAlias('@', path.join(__dirname, '../lib'));
+import 'tsx';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const { setConfig } = require('../lib/config');
 setConfig({
@@ -8,10 +9,10 @@ setConfig({
 });
 
 const { handle } = require('hono/vercel');
-const app = require('../lib/app');
-const logger = require('../lib/utils/logger');
+const { default: app } = await import('../lib/app');
+const { default: logger } = require('../lib/utils/logger');
 
 logger.info(`🎉 RSSHub is running! Cheers!`);
 logger.info('💖 Can you help keep this open source project alive? Please sponsor 👉 https://docs.rsshub.app/sponsor');
 
-module.exports = handle(app);
+export default handle(app);
