@@ -1,10 +1,6 @@
+
 {
-    "framework": null,
+	"version": 2,
     "github": { "silent": true },
-    "rewrites": [{ "source": "/(.*)", "destination": "/api/vercel.js" }],
-    "functions": {
-        "api/vercel.js": {
-            "memory": 1024
-        }
-    }
+	"rewrites": [{ "source": "/(.*)", "destination": "/api/vercel" }]
 }
