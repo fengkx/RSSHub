@@ -1,7 +1,7 @@
 {
     "framework": null,
     "github": { "silent": true },
-    "routes": [{ "src": "/.*", "dest": "/api/vercel.js" }],
+    "rewrites": [{ "source": "/(.*)", "destination": "/api/vercel.js" }],
     "functions": {
         "api/vercel.js": {
             "memory": 1024
