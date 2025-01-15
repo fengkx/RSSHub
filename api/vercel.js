@@ -1,7 +1,9 @@
 import 'tsx';
 import { createRequire } from 'module';
 
-export const runtime = 'nodejs';
+export const config = {
+    runtime: 'nodejs',
+};
 
 const require = createRequire(import.meta.url);
 
