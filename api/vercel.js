@@ -1,9 +1,9 @@
 import 'tsx';
 import { createRequire } from 'module';
 
-export const config = {
-    runtime: 'nodejs',
-};
+// export const config = {
+//     runtime: 'nodejs',
+// };
 
 const require = createRequire(import.meta.url);
 
@@ -20,3 +20,5 @@ logger.info(`🎉 RSSHub is running! Cheers!`);
 logger.info('💖 Can you help keep this open source project alive? Please sponsor 👉 https://docs.rsshub.app/sponsor');
 
 export const GET = handle(app);
+
+export default handle(app);
