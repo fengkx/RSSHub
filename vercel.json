@@ -4,7 +4,7 @@
     "routes": [{ "src": "/.*", "dest": "/api/vercel.js" }],
     "functions": {
         "api/vercel.js": {
-            "memory": 3009
+            "memory": 1024
         }
     }
 }
